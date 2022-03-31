@@ -1,0 +1,3 @@
+defaults
+chrome >= 49
+not ie 11
