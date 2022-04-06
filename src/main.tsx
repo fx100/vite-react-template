@@ -4,6 +4,8 @@ import App from './App'
 
 import './dayjs'
 
+document.title = import.meta.env.VITE_APP_TITLE
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
