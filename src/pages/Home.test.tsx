@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import Home from './Home'
 
 describe('Home', () => {
-  beforeAll(async () => {
-    await render(<Home />)
+  beforeAll(() => {
+    render(<Home />)
   })
 
   test.concurrent('text Home', () => {

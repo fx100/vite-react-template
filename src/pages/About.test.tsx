@@ -4,8 +4,8 @@ import userEvent from '@testing-library/user-event'
 import About from './About'
 
 describe('About', () => {
-  beforeEach(async () => {
-    await render(
+  beforeEach(() => {
+    render(
       <MemoryRouter initialEntries={['/about/c']}>
         <Routes>
           <Route path="/about" element={<About />}>

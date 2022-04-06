@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import App from './App'
 
 describe('App', () => {
-  beforeAll(async () => {
-    await render(<App />)
+  beforeAll(() => {
+    render(<App />)
   })
 
   test.concurrent('title', () => {
