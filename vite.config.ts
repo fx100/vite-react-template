@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import * as fs from 'fs'
 import * as path from 'path'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
@@ -26,6 +28,9 @@ export default defineConfig(({ command, mode }) => {
       alias: {
         '~': path.resolve(__dirname, 'src'),
       },
+    },
+    test: {
+      environment: 'jsdom',
     },
   }
 
