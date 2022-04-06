@@ -18,6 +18,11 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^14.0.4",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.43",
