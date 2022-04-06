@@ -2,9 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-import dayjs from 'dayjs'
-import 'dayjs/locale/zh-cn'
-dayjs.locale('zh-cn')
+import './dayjs'
 
 ReactDOM.render(
   <React.StrictMode>
