@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import AboutA from './AboutA'
 import { rest } from 'msw'
-import { SWRConfig } from 'swr'
 import { server } from '~/mocks/server'
+import SWRConfigPreset from '~/components/SWRConfigPreset'
 
 describe('AboutA', () => {
   test('mock success', async () => {
@@ -15,9 +15,9 @@ describe('AboutA', () => {
       }),
     )
     render(
-      <SWRConfig value={{ provider: () => new Map() }}>
+      <SWRConfigPreset>
         <AboutA />
-      </SWRConfig>,
+      </SWRConfigPreset>,
     )
     await waitFor(() => screen.findByText(/成功|失败/))
     expect(screen.getByText(/成功/)).toBeInTheDocument()
@@ -33,9 +33,9 @@ describe('AboutA', () => {
       }),
     )
     render(
-      <SWRConfig value={{ provider: () => new Map() }}>
+      <SWRConfigPreset>
         <AboutA />
-      </SWRConfig>,
+      </SWRConfigPreset>,
     )
     await waitFor(() => screen.findByText(/成功|失败/))
     expect(screen.queryByText(/失败/)).toBeInTheDocument()
