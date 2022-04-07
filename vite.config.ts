@@ -16,6 +16,13 @@ export default defineConfig(({ command }) => {
         '~': path.resolve(__dirname, 'src'),
       },
     },
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
     test: {
       globals: true,
       environment: 'jsdom',
