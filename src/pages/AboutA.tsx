@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import useSWR from 'swr'
-import request from '~/utils/request'
 
 const AboutA = () => {
   const [userId, setUserId] = useState(1)
 
-  const { data: user, error: userErr } = useSWR(`/api/user/${userId}`, request)
+  const { data: user, error: userErr } = useSWR(`/api/user/${userId}`)
 
   return (
     <>
