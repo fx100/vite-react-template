@@ -11,6 +11,8 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.19.5",
     "axios": "^0.26.1",
     "dayjs": "^1.11.0",
     "lodash-es": "^4.17.21",
