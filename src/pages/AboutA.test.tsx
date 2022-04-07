@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import AboutA from './AboutA'
 import { rest } from 'msw'
+import { SWRConfig } from 'swr'
 import { server } from '~/mocks/server'
 
 describe('AboutA', () => {
@@ -13,9 +14,13 @@ describe('AboutA', () => {
         return res(ctx.status(200), ctx.json(data))
       }),
     )
-    render(<AboutA />)
+    render(
+      <SWRConfig value={{ provider: () => new Map() }}>
+        <AboutA />
+      </SWRConfig>,
+    )
     await waitFor(() => screen.findByText(/成功|失败/))
-    expect(screen.queryByText(/成功/)).toBeInTheDocument()
+    expect(screen.getByText(/成功/)).toBeInTheDocument()
     expect(
       screen.getByText(new RegExp(JSON.stringify(data))),
     ).toBeInTheDocument()
@@ -27,7 +32,11 @@ describe('AboutA', () => {
         return res(ctx.status(500))
       }),
     )
-    render(<AboutA />)
+    render(
+      <SWRConfig value={{ provider: () => new Map() }}>
+        <AboutA />
+      </SWRConfig>,
+    )
     await waitFor(() => screen.findByText(/成功|失败/))
     expect(screen.queryByText(/失败/)).toBeInTheDocument()
     expect(
