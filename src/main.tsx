@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
+import { worker as mocksWorker } from './mocks/worker'
 
-import dayjs from 'dayjs'
-import 'dayjs/locale/zh-cn'
-dayjs.locale('zh-cn')
+import './dayjs'
+
+if (import.meta.env.DEV && /true/i.test(import.meta.env.VITE_APP_MOCK)) {
+  mocksWorker.start({ onUnhandledRequest: 'bypass' })
+}
+
+document.title = import.meta.env.VITE_APP_TITLE
 
 ReactDOM.render(
   <React.StrictMode>
