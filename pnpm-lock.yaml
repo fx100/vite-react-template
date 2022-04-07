@@ -38,6 +38,7 @@ specifiers:
   typescript: ^4.6.3
   vite: ^2.9.1
   vite-plugin-eslint: ^1.3.0
+  vite-plugin-imp: ^2.1.7
   vitest: ^0.8.4
 
 dependencies:
@@ -80,6 +81,7 @@ devDependencies:
   typescript: 4.6.3
   vite: 2.9.1
   vite-plugin-eslint: 1.3.0_vite@2.9.1
+  vite-plugin-imp: 2.1.7_vite@2.9.1
   vitest: 0.8.4_a2ae0f24eeb9b6ae47da7cd71e716bea
 
 packages:
@@ -1557,6 +1559,13 @@ packages:
       webidl-conversions: 7.0.0
     dev: true
 
+  /dot-case/3.0.4:
+    resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
+    dependencies:
+      no-case: 3.0.4
+      tslib: 2.3.1
+    dev: true
+
   /electron-to-chromium/1.4.103:
     resolution: {integrity: sha512-c/uKWR1Z/W30Wy/sx3dkZoj4BijbXX85QKWu9jJfjho3LBAXNEGAEW3oWiGb+dotA6C6BzCTxL2/aLes7jlUeg==}
     dev: true
@@ -2814,6 +2823,12 @@ packages:
       get-func-name: 2.0.0
     dev: true
 
+  /lower-case/2.0.2:
+    resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
+    dependencies:
+      tslib: 2.3.1
+    dev: true
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -2940,6 +2955,13 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
+    dev: true
+
+  /no-case/3.0.4:
+    resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
+    dependencies:
+      lower-case: 2.0.2
+      tslib: 2.3.1
     dev: true
 
   /node-fetch/2.6.7:
@@ -3104,6 +3126,13 @@ packages:
       p-limit: 3.1.0
     dev: true
 
+  /param-case/3.0.4:
+    resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
+    dependencies:
+      dot-case: 3.0.4
+      tslib: 2.3.1
+    dev: true
+
   /parent-module/1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -3113,6 +3142,13 @@ packages:
 
   /parse5/6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
+    dev: true
+
+  /pascal-case/3.1.2:
+    resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
+    dependencies:
+      no-case: 3.0.4
+      tslib: 2.3.1
     dev: true
 
   /path-exists/4.0.0:
@@ -4379,6 +4415,23 @@ packages:
       '@rollup/pluginutils': 4.2.0
       eslint: 7.32.0
       rollup: 2.70.1
+      vite: 2.9.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vite-plugin-imp/2.1.7_vite@2.9.1:
+    resolution: {integrity: sha512-4VfVcmWPgS/IAoPlDP6YUpC2KYxNQJlxPUOg2m0VYjSHN+PdqvZfxBHrjqti+kUiAVZew+b1/c4ixEK+uyLYbw==}
+    peerDependencies:
+      vite: '>= 2.0.0-beta.5'
+    dependencies:
+      '@babel/core': 7.17.8
+      '@babel/generator': 7.17.7
+      '@babel/parser': 7.17.8
+      '@babel/traverse': 7.17.3
+      chalk: 4.1.2
+      param-case: 3.0.4
+      pascal-case: 3.1.2
       vite: 2.9.1
     transitivePeerDependencies:
       - supports-color
