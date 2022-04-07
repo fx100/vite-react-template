@@ -1,42 +1,34 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import useSWR from 'swr'
 import request from '~/utils/request'
 
 const AboutA = () => {
   const [userId, setUserId] = useState(1)
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<Record<string, string>>({})
 
-  const fetchData = async (userId: number) => {
-    setLoading(true)
-    try {
-      const res = await request(`/api/user/${userId}`)
-      setData(res.data)
-    } catch (err) {
-      console.log(err)
-      setData({
-        error: (err as Error)?.message,
-      })
-    }
-    setLoading(false)
-  }
-
-  useEffect(() => {
-    fetchData(userId)
-  }, [userId])
+  const { data: user, error: userErr } = useSWR(`/api/user/${userId}`, request)
 
   return (
     <>
       <div>AboutA</div>
       <button
-        disabled={loading}
+        disabled={!userErr && !user}
         onClick={() => {
           setUserId((userId) => userId + 1)
         }}
       >
-        刷新
+        刷新 {userId}
       </button>
-      <div>状态：{loading ? '加载中' : data?.error ? '失败' : '成功'}</div>
-      <div>数据：{!loading && JSON.stringify(data)}</div>
+      <div>
+        状态：{!userErr && !user ? '加载中' : userErr ? '失败' : '成功'}
+      </div>
+      <div>
+        数据：
+        {(userErr?.message &&
+          JSON.stringify({
+            error: userErr?.message,
+          })) ||
+          (user && JSON.stringify(user.data))}
+      </div>
     </>
   )
 }
