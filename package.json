@@ -11,6 +11,7 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "dayjs": "^1.11.0",
     "lodash-es": "^4.17.21",
     "react": "^17.0.2",
