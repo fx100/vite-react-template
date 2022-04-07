@@ -14,6 +14,7 @@ export default defineConfig(({ command }) => {
     plugins: [react(), eslint(), antdDayjs()],
     resolve: {
       alias: {
+        '~antd': 'antd',
         '~': path.resolve(__dirname, 'src'),
       },
     },
