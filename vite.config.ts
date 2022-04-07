@@ -6,6 +6,7 @@ import { defineConfig, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
 import eslint from 'vite-plugin-eslint'
+import imp from 'vite-plugin-imp'
 
 export default defineConfig(({ command }) => {
   const common: UserConfig = {
@@ -25,6 +26,18 @@ export default defineConfig(({ command }) => {
   if (command === 'serve') {
     return {
       ...common,
+      plugins: [
+        ...common.plugins,
+        imp({
+          libList: [
+            {
+              libName: 'antd',
+              libDirectory: 'dist',
+              style: () => 'antd/dist/antd.css',
+            },
+          ],
+        }),
+      ],
     }
   } else {
     return {
@@ -36,6 +49,15 @@ export default defineConfig(({ command }) => {
             .readFileSync('.browserslistrc', 'utf-8')
             .split('\n')
             .filter((item) => item),
+        }),
+        imp({
+          libList: [
+            {
+              libName: 'antd',
+              libDirectory: 'es',
+              style: (name) => `antd/es/${name}/style`,
+            },
+          ],
         }),
       ],
     }
