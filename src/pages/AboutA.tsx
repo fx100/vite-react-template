@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import request from '~/utils/request'
 
 const AboutA = () => {
   const [userId, setUserId] = useState(1)
@@ -9,9 +9,10 @@ const AboutA = () => {
   const fetchData = async (userId: number) => {
     setLoading(true)
     try {
-      const res = await axios.get(`/api/user/${userId}`)
+      const res = await request(`/api/user/${userId}`)
       setData(res.data)
     } catch (err) {
+      console.log(err)
       setData({
         error: (err as Error)?.message,
       })
