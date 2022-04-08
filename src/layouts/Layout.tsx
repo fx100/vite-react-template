@@ -1,41 +1,32 @@
 import type { ReactNode } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { CrownOutlined, UserOutlined, GithubOutlined } from '@ant-design/icons'
+import { GithubOutlined } from '@ant-design/icons'
 import ProLayout from '@ant-design/pro-layout'
 import Footer from '@ant-design/pro-layout/es/Footer'
 import type { MenuDataItem } from '@ant-design/pro-layout'
+import type { Route } from '@ant-design/pro-layout/es/typings'
 import logo from '~/favicon.svg'
+import type { RouteObject } from 'react-router-dom'
+import layoutRoutes from '~/routes/layout'
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    icon: <CrownOutlined />,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    icon: <UserOutlined />,
-    routes: [
-      {
-        path: 'a',
-        name: 'AboutA',
-      },
-      {
-        path: 'b',
-        name: 'AboutB',
-      },
-    ],
-  },
-  {
-    path: '/table',
-    name: 'ProTable 测试',
-  },
-  {
-    path: '/formily',
-    name: 'Formily 测试',
-  },
-]
+const transformRoutes = (routes: RouteObject[]): Route[] => {
+  return routes
+    .filter((route) => {
+      return route?.menu && (route.index || typeof route.path === 'string')
+    })
+    .map((route) => {
+      return {
+        path: route?.index ? '' : route.path,
+        name: route.menu?.name,
+        icon: route.menu?.icon,
+        routes: route?.children && transformRoutes(route.children),
+      }
+    })
+}
+
+const routes = transformRoutes(layoutRoutes)
+
+console.log(routes)
 
 const Layout = () => {
   const location = useLocation()
