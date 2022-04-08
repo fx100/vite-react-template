@@ -11,7 +11,20 @@ import antdDayjs from 'antd-dayjs-vite-plugin'
 
 export default defineConfig(({ command }) => {
   const common: UserConfig = {
-    plugins: [react(), eslint(), antdDayjs()],
+    plugins: [
+      react(),
+      eslint(),
+      antdDayjs(),
+      imp({
+        libList: [
+          {
+            libName: 'antd',
+            libDirectory: 'es',
+            style: (name) => `antd/es/${name}/style`,
+          },
+        ],
+      }),
+    ],
     resolve: {
       alias: {
         '~antd': 'antd',
@@ -35,18 +48,6 @@ export default defineConfig(({ command }) => {
   if (command === 'serve') {
     return {
       ...common,
-      plugins: [
-        ...common.plugins,
-        imp({
-          libList: [
-            {
-              libName: 'antd',
-              libDirectory: 'dist',
-              style: () => 'antd/dist/antd.css',
-            },
-          ],
-        }),
-      ],
     }
   } else {
     return {
@@ -58,15 +59,6 @@ export default defineConfig(({ command }) => {
             .readFileSync('.browserslistrc', 'utf-8')
             .split('\n')
             .filter((item) => item),
-        }),
-        imp({
-          libList: [
-            {
-              libName: 'antd',
-              libDirectory: 'es',
-              style: (name) => `antd/es/${name}/style`,
-            },
-          ],
         }),
       ],
     }
