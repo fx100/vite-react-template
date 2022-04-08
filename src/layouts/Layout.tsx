@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { ReactNode } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { GithubOutlined } from '@ant-design/icons'
@@ -67,7 +68,9 @@ const Layout = () => {
           />
         )}
       >
-        <Outlet />
+        <Suspense fallback={<div>loading...</div>}>
+          <Outlet />
+        </Suspense>
       </ProLayout>
     </>
   )

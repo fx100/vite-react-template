@@ -1,11 +1,11 @@
 import type { RouteObject } from 'react-router-dom'
 import { CrownOutlined, UserOutlined } from '@ant-design/icons'
-import lazyS from '~/utils/lazyWithSuspense'
+import renderWithLazy from '~/utils/renderWithLazy'
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: lazyS(() => import('~/pages/Home')),
+    element: renderWithLazy(() => import('~/pages/Home')),
     menu: {
       icon: <CrownOutlined />,
       name: 'Home',
@@ -13,7 +13,7 @@ const routes: RouteObject[] = [
   },
   {
     path: 'about',
-    element: lazyS(() => import('~/pages/About')),
+    element: renderWithLazy(() => import('~/pages/About')),
     menu: {
       icon: <UserOutlined />,
       name: 'About',
@@ -21,41 +21,41 @@ const routes: RouteObject[] = [
     children: [
       {
         path: 'a',
-        element: lazyS(() => import('~/pages/AboutA')),
+        element: renderWithLazy(() => import('~/pages/AboutA')),
         menu: {
           name: 'AboutA',
         },
       },
       {
         path: 'b',
-        element: lazyS(() => import('~/pages/AboutB')),
+        element: renderWithLazy(() => import('~/pages/AboutB')),
         menu: {
           name: 'AboutB',
         },
       },
       {
         path: '*',
-        element: lazyS(() => import('~/pages/NotFound')),
+        element: renderWithLazy(() => import('~/pages/NotFound')),
       },
     ],
   },
   {
     path: 'table',
-    element: lazyS(() => import('~/pages/Table')),
+    element: renderWithLazy(() => import('~/pages/Table')),
     menu: {
       name: 'ProTable 测试',
     },
   },
   {
     path: 'formily',
-    element: lazyS(() => import('~/pages/Formily')),
+    element: renderWithLazy(() => import('~/pages/Formily')),
     menu: {
       name: 'Formily 测试',
     },
   },
   {
     path: '*',
-    element: lazyS(() => import('~/pages/NotFound')),
+    element: renderWithLazy(() => import('~/pages/NotFound')),
   },
 ]
 
