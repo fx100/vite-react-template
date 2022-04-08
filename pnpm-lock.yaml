@@ -4,6 +4,9 @@ specifiers:
   '@ant-design/icons': ^4.7.0
   '@ant-design/pro-layout': ^6.34.9
   '@ant-design/pro-table': ^2.71.1
+  '@formily/antd': ^2.0.18
+  '@formily/core': ^2.0.18
+  '@formily/react': ^2.0.18
   '@testing-library/dom': ^8.13.0
   '@testing-library/jest-dom': ^5.16.4
   '@testing-library/react': ^12.1.4
@@ -49,6 +52,9 @@ dependencies:
   '@ant-design/icons': 4.7.0_react-dom@17.0.2+react@17.0.2
   '@ant-design/pro-layout': 6.34.9_9c0de265bc3f25e6004b7ce7608693c1
   '@ant-design/pro-table': 2.71.1_9c0de265bc3f25e6004b7ce7608693c1
+  '@formily/antd': 2.0.18_7a1501105c1bc48e7cfbbb281a80ae60
+  '@formily/core': 2.0.18
+  '@formily/react': 2.0.18_f3e8ce30cbe5eee597369f5ec63332db
   antd: 4.19.5_react-dom@17.0.2+react@17.0.2
   axios: 0.26.1
   dayjs: 1.11.0
@@ -631,6 +637,143 @@ packages:
       - supports-color
     dev: true
 
+  /@formily/antd/2.0.18_7a1501105c1bc48e7cfbbb281a80ae60:
+    resolution: {integrity: sha512-VAj59sB0U5wA7ZUfxVAtMlU08agv6wkdnDkP/ImdRTUCHVcJGrbBUgM3VqKcHAmvlauZxzj0kK+Vl18SpYh4mQ==}
+    engines: {npm: '>=3.0.0'}
+    peerDependencies:
+      '@types/react': '>=16.8.0 || >=17.0.0'
+      '@types/react-dom': '>=16.8.0 || >=17.0.0'
+      antd: ^4.0.0
+      react: '>=16.8.0 || >=17.0.0'
+      react-dom: '>=16.8.0'
+      react-is: '>=16.8.0 || >=17.0.0'
+    dependencies:
+      '@ant-design/icons': 4.7.0_react-dom@17.0.2+react@17.0.2
+      '@formily/core': 2.0.18
+      '@formily/grid': 2.0.18_typescript@4.6.3
+      '@formily/json-schema': 2.0.18_typescript@4.6.3
+      '@formily/react': 2.0.18_f3e8ce30cbe5eee597369f5ec63332db
+      '@formily/reactive': 2.0.18
+      '@formily/reactive-react': 2.0.18_b8199948237381d32641430399d599f8
+      '@formily/shared': 2.0.18
+      '@types/react': 17.0.43
+      '@types/react-dom': 17.0.14
+      antd: 4.19.5_react-dom@17.0.2+react@17.0.2
+      classnames: 2.3.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-sortable-hoc: 1.11.0_react-dom@17.0.2+react@17.0.2
+      react-sticky-box: 0.9.3_react@17.0.2
+    transitivePeerDependencies:
+      - prop-types
+      - typescript
+    dev: false
+
+  /@formily/core/2.0.18:
+    resolution: {integrity: sha512-ZjTih1T7MXWNIYRawVCo5nJ2ZdFqUwxWiezBFbZX2VajFrkb/5St26h6bYcRLgCAmiuwxu3H8hNmOO3iVOIB5w==}
+    engines: {npm: '>=3.0.0'}
+    dependencies:
+      '@formily/reactive': 2.0.18
+      '@formily/shared': 2.0.18
+      '@formily/validator': 2.0.18
+    dev: false
+
+  /@formily/grid/2.0.18_typescript@4.6.3:
+    resolution: {integrity: sha512-41X1ovt7cLXPvDy9gBS6EcB8j9ddLNtPHM0Qrs9ylW2XNKz0lkH5raGzzRPZ5Chr9enR5U5yby+bAMkjQb3dsA==}
+    engines: {npm: '>=3.0.0'}
+    peerDependencies:
+      typescript: ^4.1.0
+    dependencies:
+      '@formily/reactive': 2.0.18
+      '@juggle/resize-observer': 3.3.1
+      typescript: 4.6.3
+    dev: false
+
+  /@formily/json-schema/2.0.18_typescript@4.6.3:
+    resolution: {integrity: sha512-ZU7W8Hi670fpCdBJNxx03EjarV8JzvB/AXCMFT2umZkyaCLx0YqxUVDC+/UOigeUVv19H/pA2yLL/rJuoab4+A==}
+    engines: {npm: '>=3.0.0'}
+    peerDependencies:
+      typescript: ^4.1.5
+    dependencies:
+      '@formily/core': 2.0.18
+      '@formily/reactive': 2.0.18
+      '@formily/shared': 2.0.18
+      typescript: 4.6.3
+    dev: false
+
+  /@formily/path/2.0.18:
+    resolution: {integrity: sha512-8KkJq9BQPMY6tleQ25BvxMTk0bBdasNwnZWj93w6BXlKMShRkOO3YBCbGxeI3gXQQxws0Q0xX34/fTeccWZVRw==}
+    engines: {npm: '>=3.0.0'}
+    dev: false
+
+  /@formily/react/2.0.18_f3e8ce30cbe5eee597369f5ec63332db:
+    resolution: {integrity: sha512-Y1g48icjQcApd+KIdK4sb1d49RGsItyvV9JzQAANTgULkMi2qYJrB6vTkAkT2yipyIe1GAO9tsgYaEvXDyZCtw==}
+    engines: {npm: '>=3.0.0'}
+    peerDependencies:
+      '@types/react': '>=16.8.0 || >=17.0.0'
+      '@types/react-dom': '>=16.8.0 || >=17.0.0'
+      react: '>=16.8.0 || >=17.0.0'
+      react-dom: '>=16.8.0 || >=17.0.0'
+      react-is: '>=16.8.0 || >=17.0.0'
+    dependencies:
+      '@formily/core': 2.0.18
+      '@formily/json-schema': 2.0.18_typescript@4.6.3
+      '@formily/reactive': 2.0.18
+      '@formily/reactive-react': 2.0.18_b8199948237381d32641430399d599f8
+      '@formily/shared': 2.0.18
+      '@formily/validator': 2.0.18
+      '@types/react': 17.0.43
+      '@types/react-dom': 17.0.14
+      hoist-non-react-statics: 3.3.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@formily/reactive-react/2.0.18_b8199948237381d32641430399d599f8:
+    resolution: {integrity: sha512-pbnInraFXMy1+CB+W4SEbjlYQ6cQ43GxMuFmNJD5zbXh6NI2lSgflb/R/1XiXuvwqTfAS0qE+u2xI2C4bTCRrg==}
+    engines: {npm: '>=3.0.0'}
+    peerDependencies:
+      '@types/react': '>=16.8.0 || >=17.0.0'
+      '@types/react-dom': '>=16.8.0 || >=17.0.0'
+      react: '>=16.8.0 || >=17.0.0'
+      react-dom: '>=16.8.0 || >=17.0.0'
+      react-is: '>=16.8.0 || >=17.0.0'
+    dependencies:
+      '@formily/reactive': 2.0.18
+      '@types/react': 17.0.43
+      '@types/react-dom': 17.0.14
+      hoist-non-react-statics: 3.3.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /@formily/reactive/2.0.18:
+    resolution: {integrity: sha512-Xy0RZ+Srnnr1q6ApU6SOReOyhOUMWiL00qpUQUO1XclIgWxcxCQVOzPsBQA9S+MPg2B4Ja30ii7/QcEd554CLg==}
+    engines: {npm: '>=3.0.0'}
+    dev: false
+
+  /@formily/shared/2.0.18:
+    resolution: {integrity: sha512-v+rhavjzSXnMPZX6LpEtpecUBRhw08MrS1peKSNCLX6Kdof8sQq0j13SGNZ2oKuE7F98kDV9j9fllZ6EUGRaKQ==}
+    engines: {npm: '>=3.0.0'}
+    dependencies:
+      '@formily/path': 2.0.18
+      camel-case: 4.1.2
+      lower-case: 2.0.2
+      no-case: 3.0.4
+      param-case: 3.0.4
+      pascal-case: 3.1.2
+      upper-case: 2.0.2
+    dev: false
+
+  /@formily/validator/2.0.18:
+    resolution: {integrity: sha512-G8+w22T8yaojc4Kk9LaIr2sr5YRzm5s9W3rlQYVq/0yIJDmkj1oTCkuGiknnR22Y28REasBVdp93qWQa8o9YHw==}
+    engines: {npm: '>=3.0.0'}
+    dependencies:
+      '@formily/shared': 2.0.18
+    dev: false
+
   /@humanwhocodes/config-array/0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
     engines: {node: '>=10.10.0'}
@@ -677,6 +820,10 @@ packages:
       '@jridgewell/resolve-uri': 3.0.5
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
+
+  /@juggle/resize-observer/3.3.1:
+    resolution: {integrity: sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==}
+    dev: false
 
   /@mswjs/cookies/0.2.0:
     resolution: {integrity: sha512-GTKYnIfXVP8GL8HRWrse+ujqDXCLKvu7+JoL6pvZFzS/d2i9pziByoWD69cOe35JNoSrx2DPNqrhUF+vgV3qUA==}
@@ -1467,6 +1614,13 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /camel-case/4.1.2:
+    resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
+    dependencies:
+      pascal-case: 3.1.2
+      tslib: 2.3.1
+    dev: false
+
   /caniuse-lite/1.0.30001323:
     resolution: {integrity: sha512-e4BF2RlCVELKx8+RmklSEIVub1TWrmdhvA5kEUueummz1XyySW0DVk+3x9HyhU9MuWTa2BhqLgEuEmUwASAdCA==}
     dev: true
@@ -1799,7 +1953,6 @@ packages:
     dependencies:
       no-case: 3.0.4
       tslib: 2.3.1
-    dev: true
 
   /electron-to-chromium/1.4.103:
     resolution: {integrity: sha512-c/uKWR1Z/W30Wy/sx3dkZoj4BijbXX85QKWu9jJfjho3LBAXNEGAEW3oWiGb+dotA6C6BzCTxL2/aLes7jlUeg==}
@@ -2614,6 +2767,12 @@ packages:
       '@babel/runtime': 7.17.8
     dev: false
 
+  /hoist-non-react-statics/3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
+    dev: false
+
   /html-encoding-sniffer/3.0.0:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
     engines: {node: '>=12'}
@@ -3119,7 +3278,6 @@ packages:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
       tslib: 2.3.1
-    dev: true
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
@@ -3288,7 +3446,6 @@ packages:
     dependencies:
       lower-case: 2.0.2
       tslib: 2.3.1
-    dev: true
 
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
@@ -3461,7 +3618,6 @@ packages:
     dependencies:
       dot-case: 3.0.4
       tslib: 2.3.1
-    dev: true
 
   /parent-module/1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -3484,7 +3640,6 @@ packages:
     dependencies:
       no-case: 3.0.4
       tslib: 2.3.1
-    dev: true
 
   /path-exists/4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
@@ -4189,6 +4344,19 @@ packages:
       react-is: 18.0.0
     dev: true
 
+  /react-sortable-hoc/1.11.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-v1CDCvdfoR3zLGNp6qsBa4J1BWMEVH25+UKxF/RvQRh+mrB+emqtVHMgZ+WreUiKJoEaiwYoScaueIKhMVBHUg==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0
+      react-dom: ^0.14.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@babel/runtime': 7.17.8
+      invariant: 2.2.4
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /react-sortable-hoc/2.0.0_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-JZUw7hBsAHXK7PTyErJyI7SopSBFRcFHDjWW5SWjcugY0i6iH7f+eJkY8cJmGMlZ1C9xz1J3Vjz0plFpavVeRg==}
     peerDependencies:
@@ -4200,6 +4368,17 @@ packages:
       prop-types: 15.8.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /react-sticky-box/0.9.3_react@17.0.2:
+    resolution: {integrity: sha512-Y/qO7vTqAvXuRR6G6ZCW4fX2Bz0GZRwiiLTVeZN5CVz9wzs37ev0Xj3KSKF/PzF0jifwATivI4t24qXG8rSz4Q==}
+    peerDependencies:
+      prop-types: ^15.6.2
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@babel/runtime': 7.17.8
+      react: 17.0.2
+      resize-observer-polyfill: 1.5.1
     dev: false
 
   /react-test-renderer/17.0.2_react@17.0.2:
@@ -4701,7 +4880,6 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
-    dev: true
 
   /tsutils/3.21.0_typescript@4.6.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -4769,6 +4947,12 @@ packages:
 
   /unstated-next/1.1.0:
     resolution: {integrity: sha512-AAn47ZncPvgBGOvMcn8tSRxsrqwf2VdAPxLASTuLJvZt4rhKfDvUkmYZLGfclImSfTVMv7tF4ynaVxin0JjDCA==}
+    dev: false
+
+  /upper-case/2.0.2:
+    resolution: {integrity: sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==}
+    dependencies:
+      tslib: 2.3.1
     dev: false
 
   /uri-js/4.4.1:
