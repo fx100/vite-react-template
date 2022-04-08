@@ -8,6 +8,7 @@ import {
   FormButtonGroup,
   Submit,
 } from '@formily/antd'
+import 'antd/es/badge/style' // @formily/antd ArrayCollapse bug
 
 const SchemaField = createSchemaField({
   components: {
