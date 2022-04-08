@@ -31,6 +31,10 @@ const routes = [
     path: '/table',
     name: 'ProTable 测试',
   },
+  {
+    path: '/formily',
+    name: 'Formily 测试',
+  },
 ]
 
 const Layout = () => {

@@ -51,6 +51,10 @@ const App = () => {
                 element={lazyWithSuspense(() => import('~/pages/Table'))}
               />
               <Route
+                path="/formily"
+                element={lazyWithSuspense(() => import('~/pages/Formily'))}
+              />
+              <Route
                 path="*"
                 element={lazyWithSuspense(() => import('~/pages/NotFound'))}
               />
