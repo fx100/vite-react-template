@@ -7,10 +7,11 @@ import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
 import eslint from 'vite-plugin-eslint'
 import imp from 'vite-plugin-imp'
+import antdDayjs from 'antd-dayjs-vite-plugin'
 
 export default defineConfig(({ command }) => {
   const common: UserConfig = {
-    plugins: [react(), eslint()],
+    plugins: [react(), eslint(), antdDayjs()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, 'src'),
