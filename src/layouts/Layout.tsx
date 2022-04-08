@@ -27,6 +27,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/table',
+    name: 'ProTable 测试',
+  },
 ]
 
 const Layout = () => {
