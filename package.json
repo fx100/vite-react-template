@@ -13,6 +13,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-layout": "^6.34.9",
+    "@ant-design/pro-table": "^2.71.1",
     "antd": "^4.19.5",
     "axios": "^0.26.1",
     "dayjs": "^1.11.0",
