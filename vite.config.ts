@@ -22,6 +22,11 @@ export default defineConfig(({ command }) => {
             libDirectory: 'es',
             style: (name) => `antd/es/${name}/style`,
           },
+          {
+            libName: '@formily/antd',
+            libDirectory: 'esm',
+            style: (name) => `@formily/antd/esm/${name}/style`,
+          },
         ],
       }),
     ],
