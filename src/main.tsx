@@ -1,17 +1,19 @@
 import React from 'react'
-import ReactDOMClient from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import App from './App'
+import { worker as mocksWorker } from './mocks/worker'
 
-const container = document.getElementById('root')
+import './dayjs'
 
-if (!container) {
-  throw new Error('root not found')
+if (import.meta.env.DEV && /true/i.test(import.meta.env.VITE_APP_MOCK)) {
+  mocksWorker.start({ onUnhandledRequest: 'bypass' })
 }
 
-const root = ReactDOMClient.createRoot(container)
+document.title = import.meta.env.VITE_APP_TITLE
 
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  document.getElementById('root'),
 )

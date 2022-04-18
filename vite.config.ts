@@ -1,31 +1,52 @@
+/// <reference types="vitest" />
+
 import * as fs from 'fs'
 import * as path from 'path'
-import { defineConfig, loadEnv, UserConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
 import eslint from 'vite-plugin-eslint'
-import { createHtmlPlugin } from 'vite-plugin-html'
+import imp from 'vite-plugin-imp'
+import antdDayjs from 'antd-dayjs-vite-plugin'
 
-export default defineConfig(({ command, mode }) => {
-  const env = loadEnv(mode, process.cwd())
-
+export default defineConfig(({ command }) => {
   const common: UserConfig = {
     plugins: [
       react(),
       eslint(),
-      createHtmlPlugin({
-        minify: true,
-        inject: {
-          data: {
-            ...env,
+      antdDayjs(),
+      imp({
+        libList: [
+          {
+            libName: 'antd',
+            libDirectory: 'es',
+            style: (name) => `antd/es/${name}/style`,
           },
-        },
+          {
+            libName: '@formily/antd',
+            libDirectory: 'esm',
+            style: (name) => `@formily/antd/esm/${name}/style`,
+          },
+        ],
       }),
     ],
     resolve: {
       alias: {
+        '~antd': 'antd',
         '~': path.resolve(__dirname, 'src'),
       },
+    },
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: path.resolve(__dirname, 'src/setupTests.ts'),
     },
   }
 
