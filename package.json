@@ -1,7 +1,7 @@
 {
   "name": "vite-react-template",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.3",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
